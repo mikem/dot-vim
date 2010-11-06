@@ -4,3 +4,6 @@
 [submodule "bundle/snipmate-snippets.git"]
 	path = bundle/snipmate-snippets.git
 	url = http://github.com/scrooloose/snipmate-snippets.git
+[submodule "bundle/Command-T.git"]
+	path = bundle/Command-T.git
+	url = http://github.com/wincent/Command-T.git
