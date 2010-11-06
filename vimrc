@@ -9,6 +9,7 @@ set guifont=Monospace\ 10
 set hlsearch
 set is
 set ruler
+set list listchars=tab:\ \ ,trail:·
 
 call pathogen#runtime_append_all_bundles()
 
@@ -36,18 +37,6 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Highlight trailing whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 :match WhitespaceEOL /\s\+$/
-
-map <F9> :call TWSMOff() <cr>
-
-function! TWSMOn()
-  :match WhitespaceEOL /\s\+$/
-  map <F9> :call TWSMOff() <cr>
-endfunction
-
-function! TWSMOff()
-  :match none
-  map <F9> :call TWSMOn() <cr>
-endfunction
 
 map <F5> :cs add ~/.vim/tags/
 map <F6> :source ~/.vim/python_fold.vim <cr>
@@ -96,7 +85,7 @@ function! PrepForCCPP()
   set listchars=tab:»\ 
 endfunction
 
-autocmd BufNew,BufRead * call TWSMOn()
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby call PrepForRuby()
 autocmd Filetype eruby call PrepForRuby()
