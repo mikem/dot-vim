@@ -44,7 +44,6 @@ map <F5> :cs add ~/.vim/tags/
 map <F6> :source ~/.vim/python_fold.vim <cr>
 map <F7> :set tags=~/.vim/tags/
 nnoremap <silent> <F8> :TlistToggle<CR>
-map <leader>t :FufFile **/<CR>
 
 function! PrepForPython()
   set tabstop=4
