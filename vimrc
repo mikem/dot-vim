@@ -32,6 +32,8 @@ filetype plugin indent on
 "let vimclojure#NailgunClient = "/home/mike/.vim/bundle/vimclojure/ng"
 "let vimclojure#SplitSize = 10
 
+let g:snippets_dir="~/.vim/snippets"
+
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Highlight trailing whitespace.
