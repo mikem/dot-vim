@@ -32,7 +32,9 @@ filetype plugin indent on
 "let vimclojure#NailgunClient = "/home/mike/.vim/bundle/vimclojure/ng"
 "let vimclojure#SplitSize = 10
 
+" SnipMate
 let g:snippets_dir="~/.vim/snippets"
+source ~/.vim/snippets/support_functions.vim
 
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
