@@ -38,6 +38,14 @@ source ~/.vim/snippets/support_functions.vim
 
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Unimpaired configuration
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 " Highlight trailing whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 :match WhitespaceEOL /\s\+$/
