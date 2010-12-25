@@ -14,13 +14,7 @@ set list listchars=tab:\ \ ,trail:·
 call pathogen#runtime_append_all_bundles()
 
 syntax on
-" colorscheme ir_black
-" set t_Co=256
 colorscheme elflord
-" For some reason, loading the colorscheme twice gets rid of the annoying dark
-" background
-"colorscheme vividchalk
-"colorscheme vividchalk
 
 filetype off
 " From VimClojure
@@ -36,8 +30,6 @@ filetype plugin indent on
 let g:snippets_dir="~/.vim/snippets"
 source ~/.vim/snippets/support_functions.vim
 
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
 " Unimpaired configuration
 " Bubble single lines
 nmap <C-Up> [e
@@ -45,15 +37,6 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
-" Highlight trailing whitespace.
-highlight WhitespaceEOL ctermbg=red guibg=red
-:match WhitespaceEOL /\s\+$/
-
-map <F5> :cs add ~/.vim/tags/
-map <F6> :source ~/.vim/python_fold.vim <cr>
-map <F7> :set tags=~/.vim/tags/
-nnoremap <silent> <F8> :TlistToggle<CR>
 
 function! PrepForPython()
   set tabstop=4
