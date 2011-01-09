@@ -49,7 +49,6 @@ function! PrepForRuby()
   set tabstop=2
   set shiftwidth=2
   set foldmethod=syntax
-  "source ~/.vim/vim-ruby-folding-1.1.vim
 endfunction
 
 function! PrepForMakefile()
@@ -86,6 +85,9 @@ autocmd Filetype eruby call PrepForRuby()
 autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
+
+" Start with all folds open
+autocmd Filetype ruby normal zR
 
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
