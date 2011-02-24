@@ -13,6 +13,9 @@ set list listchars=tab:\ \ ,trail:·
 
 call pathogen#runtime_append_all_bundles()
 
+" Use Ack for searching
+cabbrev grep Ack
+
 syntax on
 colorscheme elflord
 
