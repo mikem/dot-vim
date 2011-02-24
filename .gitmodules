@@ -10,3 +10,6 @@
 [submodule "bundle/unimpaired.git"]
 	path = bundle/unimpaired.git
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/ack.vim.git"]
+	path = bundle/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
