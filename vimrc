@@ -81,6 +81,10 @@ function! PrepForCCPP()
   set listchars=tab:»\ 
 endfunction
 
+function! PrepForCSS()
+  setlocal iskeyword+=-
+endfunction
+
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby call PrepForRuby()
@@ -88,6 +92,7 @@ autocmd Filetype eruby call PrepForRuby()
 autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
+autocmd Filetype css call PrepForCSS()
 
 " Start with all folds open
 autocmd Filetype ruby normal zR
