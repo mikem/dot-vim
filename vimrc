@@ -9,7 +9,7 @@ set guifont=Monospace\ 10
 set hlsearch
 set is
 set ruler
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 call pathogen#runtime_append_all_bundles()
 
@@ -17,7 +17,7 @@ call pathogen#runtime_append_all_bundles()
 cabbrev grep Ack
 
 syntax on
-colorscheme elflord
+"colorscheme elflord
 
 filetype off
 " From VimClojure

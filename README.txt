@@ -26,3 +26,8 @@ system Ruby, which can be selected before issuing the "make" command with:
   rvm use system
 
 See the Command-T README.txt for details.
+
+Adding New Submodules:
+
+  cd ~/.vim
+  git submodule add <path-to-repo> bundle/<bundle-name>.git
