@@ -26,6 +26,7 @@ else
 endif
 colorscheme solarized
 let g:solarized_visibility="low"
+let g:CommandTMaxHeight=20
 
 let mapleader = ","
 let maplocalleader = ";"
