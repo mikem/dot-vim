@@ -27,6 +27,8 @@ endif
 colorscheme solarized
 let g:solarized_visibility="low"
 let g:CommandTMaxHeight=20
+let NERDSpaceDelims = 1
+let g:NERDTreeWinSize = 20
 
 let mapleader = ","
 let maplocalleader = ";"
@@ -37,6 +39,17 @@ map Y y$
 " Previous/next quickfix file listings (e.g. search results)
 map <M-D-Down> :cn<CR>
 map <M-D-Up> :cp<CR>
+
+" File tree browser
+map \ :NERDTreeToggle<CR>
+
+" File tree browser showing current file - pipe (shift-backslash)
+map \| :NERDTreeFind<CR>
+
+" Comment/uncomment lines
+map <leader>/ <plug>NERDCommenterToggle
+map <D-/> <plug>NERDCommenterToggle
+imap <D-/> <Esc><plug>NERDCommenterToggle i
 
 " From VimClojure
 "let vimclojure#ParenRainbow = 1
