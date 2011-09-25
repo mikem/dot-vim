@@ -1,22 +1,24 @@
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+set nocompatible
+syntax on
+filetype plugin indent on
+
 set formatoptions=l
-set lbr
+set linebreak
 set tabpagemax=25
 set tabstop=4
+set smarttab
 set shiftwidth=4
 set expandtab
 set autoindent
-set guifont=Monospace\ 10
+set guifont="Monospace 10"
 set hlsearch
-set is
+set incsearch
 set ruler
 set list listchars=tab:\ \ ,trail:·
 
-call pathogen#runtime_append_all_bundles()
-
-" Use Ack for searching
-cabbrev grep Ack
-
-syntax on
 if has('gui_running')
     set background=light
 else
@@ -25,9 +27,17 @@ endif
 colorscheme solarized
 let g:solarized_visibility="low"
 
-filetype off
+let mapleader = ","
+let maplocalleader = ";"
+
+" Make Y consistent with D and C
+map Y y$
+
+" Previous/next quickfix file listings (e.g. search results)
+map <M-D-Down> :cn<CR>
+map <M-D-Up> :cp<CR>
+
 " From VimClojure
-filetype plugin indent on
 "let vimclojure#ParenRainbow = 1
 "let vimclojure#HighlightBuiltins = 1
 "let vimclojure#DynamicHighlighting = 1
@@ -91,10 +101,10 @@ function! PrepForCSS()
   setlocal iskeyword+=-
 endfunction
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile *.json set ft=javascript
 autocmd Filetype python call PrepForPython()
-autocmd Filetype ruby call PrepForRuby()
-autocmd Filetype eruby call PrepForRuby()
+autocmd Filetype ruby,eruby call PrepForRuby()
 autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
@@ -102,6 +112,13 @@ autocmd Filetype css call PrepForCSS()
 
 " Start with all folds open
 autocmd Filetype ruby normal zR
+
+" Strip trailing whitespace for code files on save
+" C family
+autocmd BufWritePre *.m,*.h,*.c,*.mm,*.cpp,*.hpp :%s/\s\+$//e
+
+" Ruby, Rails
+autocmd BufWritePre *.rb,*.yml,*.js,*.json,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.haml,*.feature :%s/\s\+$//e
 
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
