@@ -1,6 +1,6 @@
 filetype off
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 set nocompatible
 syntax on
 filetype plugin indent on
@@ -84,6 +84,12 @@ function! PrepForRuby()
   set foldmethod=syntax
 endfunction
 
+function! PrepForCoffeeScript()
+  set tabstop=2
+  set shiftwidth=2
+  set foldmethod=indent
+endfunction
+
 function! PrepForMakefile()
   set tabstop=4
   set shiftwidth=4
@@ -119,20 +125,21 @@ au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby,eruby call PrepForRuby()
+autocmd Filetype coffee call PrepForCoffeeScript()
 autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
 
 " Start with all folds open
-autocmd Filetype ruby normal zR
+autocmd Filetype ruby,coffee normal zR
 
 " Strip trailing whitespace for code files on save
 " C family
 autocmd BufWritePre *.m,*.h,*.c,*.mm,*.cpp,*.hpp :%s/\s\+$//e
 
 " Ruby, Rails
-autocmd BufWritePre *.rb,*.yml,*.js,*.json,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.haml,*.feature :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.yml,*.js,*.coffee,*.json,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.haml,*.feature :%s/\s\+$//e
 
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
