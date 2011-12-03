@@ -18,6 +18,7 @@ set hlsearch
 set incsearch
 set ruler
 set list listchars=tab:\ \ ,trail:·
+set scrolloff=3
 
 if has('gui_running')
     set background=light
@@ -35,6 +36,9 @@ let maplocalleader = ";"
 
 " Make Y consistent with D and C
 map Y y$
+
+" CommandT
+map <leader>f :CommandT<CR>
 
 " Previous/next quickfix file listings (e.g. search results)
 map <M-D-Down> :cn<CR>
