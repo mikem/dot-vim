@@ -56,11 +56,10 @@ map <D-/> <plug>NERDCommenterToggle
 imap <D-/> <Esc><plug>NERDCommenterToggle i
 
 " From VimClojure
-"let vimclojure#ParenRainbow = 1
-"let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
 "let vimclojure#DynamicHighlighting = 1
 "let vimclojure#WantNailgun = 1
-"let vimclojure#NailgunClient = "/home/mike/.vim/bundle/vimclojure/ng"
+"let vimclojure#NailgunClient = $HOME . "/.vim/bundle/vimclojure/ng"
 "let vimclojure#SplitSize = 10
 
 " SnipMate
