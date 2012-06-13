@@ -8,9 +8,9 @@ filetype plugin indent on
 set formatoptions=l
 set linebreak
 set tabpagemax=25
-set tabstop=4
+set tabstop=2
 set smarttab
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 set autoindent
 set guifont="Monospace 10"
@@ -58,8 +58,8 @@ imap <D-/> <Esc><plug>NERDCommenterToggle i
 " From VimClojure
 let vimclojure#ParenRainbow = 1
 "let vimclojure#DynamicHighlighting = 1
-"let vimclojure#WantNailgun = 1
-"let vimclojure#NailgunClient = $HOME . "/.vim/bundle/vimclojure/ng"
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . "/.vim/bundle/vimclojure-nailgun-client/ng"
 "let vimclojure#SplitSize = 10
 
 " SnipMate
@@ -126,6 +126,7 @@ endfunction
 
 au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
+au BufRead,BufNewFile *.cljs set ft=clojure
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby,eruby call PrepForRuby()
 autocmd Filetype coffee call PrepForCoffeeScript()
