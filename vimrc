@@ -19,6 +19,7 @@ set incsearch
 set ruler
 set list listchars=tab:\ \ ,trail:·
 set scrolloff=3
+set wildignore=*.class
 
 if has('gui_running')
     set background=light
@@ -27,7 +28,6 @@ else
 endif
 colorscheme solarized
 let g:solarized_visibility="low"
-let g:CommandTMaxHeight=20
 let NERDSpaceDelims = 1
 let g:NERDTreeWinSize = 20
 
@@ -36,9 +36,6 @@ let maplocalleader = ";"
 
 " Make Y consistent with D and C
 map Y y$
-
-" CommandT
-map <leader>f :CommandT<CR>
 
 " Previous/next quickfix file listings (e.g. search results)
 map <M-D-Down> :cn<CR>
