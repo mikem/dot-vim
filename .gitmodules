@@ -28,9 +28,6 @@
 [submodule "bundle/vim-markdown.git"]
 	path = bundle/vim-markdown.git
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/paredit.vim"]
-	path = bundle/paredit.vim
-	url = https://github.com/emezeske/paredit.vim.git
 [submodule "bundle/ctrlp.vim.git"]
 	path = bundle/ctrlp.vim.git
 	url = https://github.com/kien/ctrlp.vim.git
