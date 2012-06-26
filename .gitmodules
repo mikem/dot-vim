@@ -31,3 +31,6 @@
 [submodule "bundle/paredit.vim"]
 	path = bundle/paredit.vim
 	url = https://github.com/emezeske/paredit.vim.git
+[submodule "bundle/ctrlp.vim.git"]
+	path = bundle/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
