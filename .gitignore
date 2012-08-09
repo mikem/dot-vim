@@ -1,3 +1,4 @@
 .netrwhist
-bundle/vimclojure*/doc/tags
 *.sw[op]
+bundle/vimclojure*/doc/tags
+bundle/vimclojure-nailgun-client-*/ng

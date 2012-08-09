@@ -13,19 +13,10 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     git submodule update
 
-Build Command-T C Extension:
+Build the VimClojure nailgun client:
 
-  cd ~/.vim/bundle/Command-T.git/ruby/command-t
-  ruby extconf.rb
-  make
-
-Note: If you are an RVM user, you must perform the build using the same
-version of Ruby that Vim itself is linked against. This will often be the
-system Ruby, which can be selected before issuing the "make" command with:
-
-  rvm use system
-
-See the Command-T README.txt for details.
+    cd ~/.vim/bundle/vimclojure-nailgun-client
+    make
 
 Adding New Submodules:
 
