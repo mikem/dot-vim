@@ -131,9 +131,10 @@ autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
+autocmd FileType clojure call TurnOnClojureFolding()
 
 " Start with all folds open
-autocmd Filetype ruby,coffee normal zR
+autocmd Filetype ruby,coffee,clojure normal zR
 
 " Strip trailing whitespace for code files on save
 " C family
@@ -147,3 +148,50 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+" ---------------------------------------------------------------------------
+" Automagic Clojure folding on defn's and defmacro's
+"
+" Blog post: http://writequit.org/blog/?p=413
+" Copied from: https://gist.github.com/3049202
+function GetClojureFold()
+      if getline(v:lnum) =~ '^\s*(defn.*\s'
+            return ">1"
+      elseif getline(v:lnum) =~ '^\s*(def\(macro\|method\|page\|partial\).*\s'
+            return ">1"
+      elseif getline(v:lnum) =~ '^\s*(defmethod.*\s'
+            return ">1"
+      elseif getline(v:lnum) =~ '^\s*$'
+            let my_cljnum = v:lnum
+            let my_cljmax = line("$")
+
+            while (1)
+                  let my_cljnum = my_cljnum + 1
+                  if my_cljnum > my_cljmax
+                        return "<1"
+                  endif
+
+                  let my_cljdata = getline(my_cljnum)
+
+" If we match an empty line, stop folding
+                  if my_cljdata =~ '^$'
+                        return "<1"
+                  else
+                        return "="
+                  endif
+            endwhile
+      else
+            return "="
+      endif
+endfunction
+
+function TurnOnClojureFolding()
+      setlocal foldexpr=GetClojureFold()
+      setlocal foldmethod=expr
+endfunction
+
+" Simplify the fold display
+function MinimalFoldText()
+  return getline(v:foldstart)
+endfunction
+set foldtext=MinimalFoldText()
