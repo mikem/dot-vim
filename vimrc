@@ -74,7 +74,7 @@ vmap <C-Down> ]egv
 function! PrepForPython()
   set tabstop=4
   set shiftwidth=4
-  source ~/.vim/python_fold.vim
+  "source ~/.vim/python_fold.vim
   set formatoptions+=roq
 endfunction
 
