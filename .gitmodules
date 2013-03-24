@@ -40,3 +40,6 @@
 [submodule "bundle/vim-gitgutter.git"]
 	path = bundle/vim-gitgutter.git
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-fireplace.git"]
+	path = bundle/vim-fireplace.git
+	url = git://github.com/tpope/vim-fireplace.git

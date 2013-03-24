@@ -52,13 +52,6 @@ map <leader>/ <plug>NERDCommenterToggle
 map <D-/> <plug>NERDCommenterToggle
 imap <D-/> <Esc><plug>NERDCommenterToggle i
 
-" From VimClojure
-let vimclojure#ParenRainbow = 1
-"let vimclojure#DynamicHighlighting = 1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = $HOME . "/.vim/bundle/vimclojure-nailgun-client/ng"
-"let vimclojure#SplitSize = 10
-
 " SnipMate
 let g:snippets_dir="~/.vim/snippets"
 source ~/.vim/snippets/support_functions.vim
