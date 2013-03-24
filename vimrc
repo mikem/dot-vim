@@ -42,10 +42,10 @@ map <M-D-Down> :cn<CR>
 map <M-D-Up> :cp<CR>
 
 " File tree browser
-map \ :NERDTreeToggle<CR>
+map <Leader>t :NERDTreeToggle<CR>
 
-" File tree browser showing current file - pipe (shift-backslash)
-map \| :NERDTreeFind<CR>
+" File tree browser showing current file
+map <Leader>T :NERDTreeFind<CR>
 
 " Comment/uncomment lines
 map <leader>/ <plug>NERDCommenterToggle
