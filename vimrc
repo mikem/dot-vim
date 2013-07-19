@@ -34,6 +34,8 @@ let g:NERDTreeWinSize = 20
 let mapleader = ","
 let maplocalleader = ";"
 
+let g:org_export_emacs="/usr/local/bin/emacs"
+
 " Make Y consistent with D and C
 map Y y$
 

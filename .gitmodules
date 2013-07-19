@@ -43,3 +43,6 @@
 [submodule "bundle/vim-fireplace.git"]
 	path = bundle/vim-fireplace.git
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-orgmode.git"]
+	path = bundle/vim-orgmode.git
+	url = git@github.com:jceb/vim-orgmode.git
