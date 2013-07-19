@@ -20,6 +20,7 @@ set ruler
 set list listchars=tab:\ \ ,trail:·
 set scrolloff=3
 set wildignore=*.class
+set splitright
 
 if has('gui_running')
   colorscheme github
