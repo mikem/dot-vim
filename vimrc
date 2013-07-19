@@ -2,7 +2,7 @@ filetype off
 call pathogen#helptags()
 call pathogen#infect()
 set nocompatible
-syntax on
+syntax enable
 filetype plugin indent on
 
 set formatoptions=l
@@ -22,12 +22,13 @@ set scrolloff=3
 set wildignore=*.class
 
 if has('gui_running')
-    set background=light
+  colorscheme github
 else
-    set background=dark
+  set t_Co=16
+  set background=dark
+  let g:solarized_visibility="low"
+  colorscheme solarized
 endif
-colorscheme solarized
-let g:solarized_visibility="low"
 let NERDSpaceDelims = 1
 let g:NERDTreeWinSize = 20
 
