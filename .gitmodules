@@ -3,7 +3,7 @@
 	url = http://github.com/msanders/snipmate.vim.git
 [submodule "bundle/snipmate-snippets.git"]
 	path = bundle/snipmate-snippets.git
-	url = http://github.com/scrooloose/snipmate-snippets.git
+	url = http://github.com/mikem/snipmate-snippets.git
 [submodule "bundle/unimpaired.git"]
 	path = bundle/unimpaired.git
 	url = https://github.com/tpope/vim-unimpaired.git
