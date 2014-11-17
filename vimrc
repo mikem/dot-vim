@@ -1,7 +1,30 @@
-filetype off
-call pathogen#helptags()
-call pathogen#infect()
 set nocompatible
+filetype off
+
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
+
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/paredit.vim'
+Bundle 'mikem/snipmate-snippets'
+Bundle 'msanders/snipmate.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-scripts/utl.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-markdown'
+Bundle 'jceb/vim-orgmode'
+
+call vundle#end()
+
 syntax enable
 filetype plugin indent on
 
@@ -30,6 +53,7 @@ else
   let g:solarized_visibility="low"
   colorscheme solarized
 endif
+
 let NERDSpaceDelims = 1
 let g:NERDTreeWinSize = 20
 
