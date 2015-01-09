@@ -178,6 +178,35 @@ if has("autocmd")
 endif
 
 " ---------------------------------------------------------------------------
+" Say you have layed out a complex window split structure, and want to
+" temporarily open one window with max dimensions, but don't want to lose your
+" split structure. The following function and mappings let you toggle between
+" the split windows and on window maximized. The mappings prevent the default
+" behavior of calling :only and losing your finely tuned splits.
+"
+" http://vim.wikia.com/wiki/Maximize_window_and_return_to_previous_split_structure
+
+nnoremap <C-W>O :call MaximizeToggle()<CR>
+nnoremap <C-W>o :call MaximizeToggle()<CR>
+nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
+
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
+
+" ---------------------------------------------------------------------------
 " Automagic Clojure folding on defn's and defmacro's
 "
 " Blog post: http://writequit.org/blog/?p=413
