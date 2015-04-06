@@ -44,6 +44,8 @@ set list listchars=tab:\ \ ,trail:·
 set scrolloff=3
 set wildignore=*.class
 set splitright
+set spelllang=en
+set spellfile=$HOME/.vim/spell/mike.uft-8.add
 
 if has('gui_running')
   colorscheme github
@@ -144,6 +146,7 @@ function! PrepForCSS()
 endfunction
 
 function! PrepForOrgMode()
+  set spell
   set shiftwidth=2
   let g:ctrlp_root_markers = ['todo.org']
 endfunction
