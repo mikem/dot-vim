@@ -64,6 +64,7 @@ let maplocalleader = ";"
 
 let g:org_indent=0
 let g:org_export_emacs="/usr/local/bin/emacs"
+let g:org_todo_keywords=['TODO', 'DOING', '|', 'DONE']
 
 " Make Y consistent with D and C
 map Y y$
@@ -146,7 +147,6 @@ function! PrepForCSS()
 endfunction
 
 function! PrepForOrgMode()
-  set spell
   set shiftwidth=2
   let g:ctrlp_root_markers = ['todo.org']
 endfunction
