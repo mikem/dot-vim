@@ -23,6 +23,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-markdown'
 Bundle 'jceb/vim-orgmode'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'ensime/ensime-vim'
 
 call vundle#end()
 
