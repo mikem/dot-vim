@@ -83,7 +83,6 @@ vmap <C-Down> ]egv
 function! PrepForPython()
   set tabstop=4
   set shiftwidth=4
-  "source ~/.vim/python_fold.vim
   set formatoptions+=roq
 endfunction
 
@@ -99,27 +98,6 @@ function! PrepForMakefile()
   set noexpandtab
 endfunction
 
-function! PrepForCSharp()
-  set tabstop=4
-  set shiftwidth=4
-"  set noexpandtab
-  source ~/.vim/csharp.vim
-"  set foldmarker={,}
-"  set foldmethod=marker
-"  set foldtext=substitute(getline(v:foldstart),'{.*','{...}',)
-"  set foldcolumn=4
-"  set foldlevelstart=1
-endfunction
-
-function! PrepForCCPP()
-  set tabstop=4
-  set shiftwidth=4
-  set noexpandtab
-  set foldmethod=syntax
-  " set listchars=tab:»\ ,trail:«,eol:$
-  set listchars=tab:»\ 
-endfunction
-
 function! PrepForCSS()
   setlocal iskeyword+=-
 endfunction
@@ -129,8 +107,6 @@ au BufRead,BufNewFile *.json set ft=javascript
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby,eruby call PrepForRuby()
 autocmd Filetype make call PrepForMakefile()
-autocmd Filetype cs call PrepForCSharp()
-autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
 
 " Start with all folds open
