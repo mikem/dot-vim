@@ -23,7 +23,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-markdown'
 Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'ensime/ensime-vim'
 
 call vundle#end()
 
