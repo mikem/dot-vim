@@ -10,8 +10,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/paredit.vim'
-Plugin 'mikem/snipmate-snippets'
-Plugin 'msanders/snipmate.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/utl.vim'
@@ -80,10 +78,6 @@ map <Leader>T :NERDTreeFind<CR>
 map <leader>/ <plug>NERDCommenterToggle
 map <D-/> <plug>NERDCommenterToggle
 imap <D-/> <Esc><plug>NERDCommenterToggle i
-
-" SnipMate
-let g:snippets_dir="~/.vim/snippets"
-source ~/.vim/snippets/support_functions.vim
 
 " Unimpaired configuration
 " Bubble single lines
