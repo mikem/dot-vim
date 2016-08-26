@@ -12,7 +12,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/utl.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
@@ -96,12 +95,6 @@ function! PrepForRuby()
   set foldmethod=syntax
 endfunction
 
-function! PrepForCoffeeScript()
-  set tabstop=2
-  set shiftwidth=2
-  set foldmethod=indent
-endfunction
-
 function! PrepForMakefile()
   set tabstop=4
   set shiftwidth=4
@@ -137,14 +130,13 @@ au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby,eruby call PrepForRuby()
-autocmd Filetype coffee call PrepForCoffeeScript()
 autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
 
 " Start with all folds open
-autocmd Filetype ruby,coffee normal zR
+autocmd Filetype ruby normal zR
 
 " Strip trailing whitespace for code files on save
 " C family
