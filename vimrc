@@ -14,8 +14,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/utl.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 
