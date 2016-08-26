@@ -9,13 +9,11 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/paredit.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/utl.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-markdown'
@@ -139,7 +137,6 @@ endfunction
 
 au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
-au BufRead,BufNewFile *.cljs set ft=clojure
 autocmd Filetype python call PrepForPython()
 autocmd Filetype ruby,eruby call PrepForRuby()
 autocmd Filetype coffee call PrepForCoffeeScript()
@@ -147,10 +144,9 @@ autocmd Filetype make call PrepForMakefile()
 autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
-autocmd FileType clojure call TurnOnClojureFolding()
 
 " Start with all folds open
-autocmd Filetype ruby,coffee,clojure normal zR
+autocmd Filetype ruby,coffee normal zR
 
 " Strip trailing whitespace for code files on save
 " C family
@@ -192,47 +188,6 @@ function! MaximizeToggle()
     exec "mksession! " . s:maximize_session
     only
   endif
-endfunction
-
-" ---------------------------------------------------------------------------
-" Automagic Clojure folding on defn's and defmacro's
-"
-" Blog post: http://writequit.org/blog/?p=413
-" Copied from: https://gist.github.com/3049202
-function GetClojureFold()
-      if getline(v:lnum) =~ '^\s*(defn.*\s'
-            return ">1"
-      elseif getline(v:lnum) =~ '^\s*(def\(macro\|method\|page\|partial\).*\s'
-            return ">1"
-      elseif getline(v:lnum) =~ '^\s*(defmethod.*\s'
-            return ">1"
-      elseif getline(v:lnum) =~ '^\s*$'
-            let my_cljnum = v:lnum
-            let my_cljmax = line("$")
-
-            while (1)
-                  let my_cljnum = my_cljnum + 1
-                  if my_cljnum > my_cljmax
-                        return "<1"
-                  endif
-
-                  let my_cljdata = getline(my_cljnum)
-
-" If we match an empty line, stop folding
-                  if my_cljdata =~ '^$'
-                        return "<1"
-                  else
-                        return "="
-                  endif
-            endwhile
-      else
-            return "="
-      endif
-endfunction
-
-function TurnOnClojureFolding()
-      setlocal foldexpr=GetClojureFold()
-      setlocal foldmethod=expr
 endfunction
 
 " Simplify the fold display
