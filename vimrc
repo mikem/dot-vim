@@ -37,6 +37,7 @@ set smarttab
 set shiftwidth=2
 set expandtab
 set autoindent
+set backspace=indent
 set guifont="Monospace 10"
 set hlsearch
 set incsearch
