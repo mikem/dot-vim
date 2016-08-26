@@ -21,7 +21,6 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-markdown'
-Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
@@ -63,10 +62,6 @@ let g:NERDTreeWinSize = 20
 
 let mapleader = ","
 let maplocalleader = ";"
-
-let g:org_indent=0
-let g:org_export_emacs="/usr/local/bin/emacs"
-let g:org_todo_keywords=['TODO', 'DOING', '|', 'DONE']
 
 " Make Y consistent with D and C
 map Y y$
@@ -148,11 +143,6 @@ function! PrepForCSS()
   setlocal iskeyword+=-
 endfunction
 
-function! PrepForOrgMode()
-  set shiftwidth=2
-  let g:ctrlp_root_markers = ['todo.org']
-endfunction
-
 au BufRead,BufNewFile {Gemfile*,Rakefile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.cljs set ft=clojure
@@ -164,7 +154,6 @@ autocmd Filetype cs call PrepForCSharp()
 autocmd Filetype cpp,c call PrepForCCPP()
 autocmd Filetype css call PrepForCSS()
 autocmd FileType clojure call TurnOnClojureFolding()
-autocmd FileType org call PrepForOrgMode()
 
 " Start with all folds open
 autocmd Filetype ruby,coffee,clojure normal zR
