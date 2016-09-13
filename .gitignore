@@ -2,4 +2,3 @@ spell/*.add
 spell/*.add.spl
 .netrwhist
 *.sw[op]
-bundle/**
