@@ -28,6 +28,7 @@ endif
   \]
 
   let g:dotspacevim_additional_plugins = ['morhetz/gruvbox']
+  " You can also pass vim plug options like this: [{ 'name': 'Valloric/YouCompleteMe', 'option': {'do': './install.py'}}]
 
   let g:dotspacevim_excluded_plugins = []
 
